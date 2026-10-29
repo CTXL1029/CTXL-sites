@@ -1,14 +1,166 @@
-.main {
-    margin: 1rem;
-    padding: 2rem 2rem;
-    text-align: center;
+:root {
+    --bg-color: #f3f4f6;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --card-hover: #f9fafb;
+    --card-border: #e5e7eb;
+    --primary: #0a6d7a;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
 
-button {
-    display: inline-block;
-    vertical-align: middle;
-    font-family: "Mulish", system-ui;
-    font-size: 20px;
+[data-theme="dark"] {
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-bg: #1f2937;
+    --card-hover: #374151;
+    --card-border: #374151;
+    --primary: #22d6ee;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Navbar / Toggle */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.theme-toggle {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
     font-weight: 600;
-    font-style: normal;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Mulish', sans-serif;
+}
+
+.theme-toggle:hover {
+    background: var(--card-hover);
+}
+
+/* Profile Info */
+.profile {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.profile h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.profile p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Tools Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tool Card Base & Animation States */
+.tool-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.3s ease, 
+                border-color 0.3s ease;
+}
+
+.tool-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tool-card.visible:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover);
+    border-color: var(--primary);
+}
+
+.tool-icon, .tool-icon2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5rem;
+    object-fit: contain;
+    padding: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tool-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-info h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.tool-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-weight: 400;
 }

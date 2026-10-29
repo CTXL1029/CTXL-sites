@@ -1,28 +1,82 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>CTXL's Backends</title>
-    <script src="button.js"></script>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTXL | Web Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.png" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="main">
-      <div class="button">
-        <button onclick="anime()">Anime Related</button>
-        <button onclick="contact()">Phone contact</button>
-        <button onclick="package_tracker()">Package Tracker</button>
-        <button onclick="gate_light_ctrl()">Gate Light Ctrl</button>
-        <button onclick="map()">Mean Arterial Pressure</button>
-        <button onclick="PHF()">PT Home Fit</button>
-      </div>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <nav class="navbar">
+            <button class="theme-toggle" id="themeToggle">
+                <span id="themeIcon">🌙</span> 
+                <span id="themeText">Dark Mode</span>
+            </button>
+        </nav>
+
+        <header class="profile">
+            <img src="favicon.png" alt="Trần Công Thành" class="avatar">
+            <h1>Trần Công Thành (CTXL)</h1>
+            <p>Tổng hợp các công cụ web và dự án cá nhân do mình phát triển.</p>
+        </header>
+
+        <main class="tools-grid">
+            <a href="https://tkbtools.github.io" target="_blank" class="tool-card">
+                <img src="https://raw.githubusercontent.com/TKBTools/TKBTools.github.io/refs/heads/main/favicon.png" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>TKB Tools</h3>
+                    <p>Công cụ quản lý thời khóa biểu</p>
+                </div>
+            </a>
+
+            <a href="https://ctxl1029.github.io/Attendance_Checker/" target="_blank" class="tool-card">
+                <img src="https://raw.githubusercontent.com/CTXL1029/Attendance_Checker/refs/heads/main/favicon.webp" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>Attendance Checker</h3>
+                    <p>Hệ thống điểm danh</p>
+                </div>
+            </a>
+
+            <a href="https://ctxl1029.github.io/anime_shortcuts/" target="_blank" class="tool-card">
+                <img src="https://raw.githubusercontent.com/CTXL1029/anime_shortcuts/refs/heads/main/assets/favicon.jpg" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>Anime Shortcuts</h3>
+                    <p>Trang tổng hợp anime đang xem trong mùa</p>
+                </div>
+            </a>
+            
+            <a href="https://ctxl1029.github.io/so-theo-doi-thu-chi/" target="_blank" class="tool-card">
+                <img src="https://raw.githubusercontent.com/CTXL1029/so-theo-doi-thu-chi/refs/heads/main/assets/favicon.png" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>Sổ theo dõi thu chi</h3>
+                    <p>SỔ THU CHI LỚP K60G -</p>
+                    <p>THPT Cẩm Giàng</p>
+                </div>
+            </a>
+            <a href="./package_tracker/index.html" target="_blank" class="tool-card">
+                <img src="./package_tracker/favicon.png" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>Package Tracker</h3>
+                    <p>Theo dõi trạng thái gói hàng</p>
+                </div>
+            </a>
+            <a href="./Mean_Arterial_Pressure/index.html" target="_blank" class="tool-card">
+                <img src="./Mean_Arterial_Pressure/favicon.png" alt="Icon" class="tool-icon">
+                <div class="tool-info">
+                    <h3>Tính Trung Bình Huyết Áp & Nhịp Tim</h3>
+                    <p>Tính toán áp lực động mạch trung bình</p>
+                </div>
+            </a>
+        </main>
     </div>
-  </body>
+
+    <!-- Nhúng file Javascript (đặt ở cuối body để tải trang nhanh hơn) -->
+    <script src="script.js"></script>
+</body>
 </html>
